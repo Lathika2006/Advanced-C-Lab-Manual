@@ -100,6 +100,7 @@ To write a C program to read a file name from user
 4.	End the main function.
 5.	Return 0 to indicate successful program execution.
 ## Program:
+```
 #include <stdio.h>
 
 int main() {
