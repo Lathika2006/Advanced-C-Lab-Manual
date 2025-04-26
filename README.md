@@ -227,11 +227,11 @@ int main() {
         printf("Marks: %d\n", s[i].marks);
     }
     free(s);
-
     return 0;
 }
 ## Output:
 ![image](https://github.com/user-attachments/assets/5b520449-204b-4916-b342-082263a16ad2)
 
-## Result: Thus, the program is verified successfully
+## Result: 
+Thus, the program is verified successfully
 
