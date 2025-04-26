@@ -120,6 +120,7 @@ int main() {
 
     return 0;
 }
+```
 ## Output:
 ![image](https://github.com/user-attachments/assets/b9e6b2f1-5de3-402a-b0e0-460fd7761ee0)
 ## Result: 
@@ -143,6 +144,7 @@ To write a C program to read, a file and insert text in that file Algorithm:
 10.	End the main function.
 11.	Return 0 to indicate successful program execution.
 ## Program:
+```
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -174,6 +176,7 @@ int main() {
 
     return 0;
 }
+```
 ## Output:
 ![image](https://github.com/user-attachments/assets/e2c2d810-6e85-4eb9-bd0e-f42e82f295c1)
 
@@ -183,8 +186,10 @@ Thus, the program is verified successfully.
 ## Ex No 5: 
 C PROGRAM TO DISPLAY STUDENT DETAILS USING STRUCTURE
 ## Aim:
+
 The aim of this program is to dynamically allocate memory to store information about multiple subjects (name and marks), input the details for each subject, and then display the stored information. Finally, it frees the allocated memory to prevent memory leaks.
 ## Algorithm: 
+
 1.Input the number of subjects.
 2.Read the integer value n from the user, which represents the number of subjects.
 3.Dynamically allocate memory:
