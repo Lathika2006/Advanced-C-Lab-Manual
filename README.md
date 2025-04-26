@@ -38,7 +38,8 @@ int main() {
 }
 ```
 ## Output:
- 
+ ![image](https://github.com/user-attachments/assets/8e129198-5bea-4469-b29b-eb006696973d)
+
 ## Result: 
 Thus, the program is verified successfully.
 
@@ -75,7 +76,8 @@ int main() {
 }
 ```
 ## Output:
- 
+ ![image](https://github.com/user-attachments/assets/fa8378f4-21d4-484c-96c4-3ee9500eec90)
+
 ## Result:
 Thus, the program is verified successfully.
 
@@ -118,7 +120,9 @@ int main() {
     return 0;
 }
 ## Output:
- Result: Thus, the program is verified successfully
+![image](https://github.com/user-attachments/assets/b9e6b2f1-5de3-402a-b0e0-460fd7761ee0)
+## Result: 
+Thus, the program is verified successfully
 
 ## EXP NO:4
 PROGRAM TO READ A FILE NAME FROM USER, WRITE THAT FILE AND INSERT TEXT IN TO THAT FILE 
@@ -170,6 +174,8 @@ int main() {
     return 0;
 }
 ## Output:
+![image](https://github.com/user-attachments/assets/e2c2d810-6e85-4eb9-bd0e-f42e82f295c1)
+
 ## Result:
 Thus, the program is verified successfully.
 
@@ -224,9 +230,8 @@ int main() {
 
     return 0;
 }
-
-
-
 ## Output:
- Result: Thus, the program is verified successfully
+![image](https://github.com/user-attachments/assets/5b520449-204b-4916-b342-082263a16ad2)
+
+## Result: Thus, the program is verified successfully
 
