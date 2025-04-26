@@ -198,6 +198,7 @@ The aim of this program is to dynamically allocate memory to store information a
 12.Return from the main function
 13.End the program by returning 0.
 ## Program:
+```
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -229,13 +230,14 @@ int main() {
     free(s);
     return 0;
 }
+```
 ## Output:
 ![image](https://github.com/user-attachments/assets/5b520449-204b-4916-b342-082263a16ad2)
 
 ## Result: 
 Thus, the program is verified successfully
 
-##  Module 7 Lab Assignment
+##  Module 8 Lab Assignment
 
 ## EXP NO:6 
 C PROGRAM PRINT THE LOWERCASE ENGLISH WORD CORRESPONDING TO THE NUMBER Aim: To write a C program print the lowercase English word corresponding to the number 
@@ -341,7 +343,8 @@ int main() {
 
 ![image](https://github.com/user-attachments/assets/18a129d2-06cd-4e29-8857-ae77e41345e3)
 
-## Result: Thus, the program is verified successfully
+## Result: 
+Thus, the program is verified successfully
 
 ## EXP NO:8 
 C PROGRAM TO PRINT ALL OF ITS PERMUTATIONS IN STRICT LEXICOGRAPHICAL ORDER. Aim: To write a C program to print all of its permutations in strict lexicographical order.
