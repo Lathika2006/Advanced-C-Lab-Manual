@@ -533,7 +533,7 @@ int main() {
 ## Result: 
 Thus, the program is verified successfully
 
-## Module 10 Lab Assignment
+## Module 9 Lab Assignment
 
 ## EXP NO:11
 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
@@ -751,8 +751,8 @@ int main() {
 ## Result:
 Thus, the program to display queue elements using array is verified successfully.
 
-## EXP NO:
-14 C PROGRAM TO INSERT ELEMENTS IN QUEUE USING ARRAY. Aim: To write a C program to insert elements in queue using array.
+## EXP NO 14 C:
+PROGRAM TO INSERT ELEMENTS IN QUEUE USING ARRAY. Aim: To write a C program to insert elements in queue using array.
 
 ## Algorithm:
 
@@ -762,12 +762,41 @@ Initialize the rear, front, and size of the queue as needed.
 Call the enqueue function as needed.
 ## Program:
 ```
+#include <stdio.h>
+#define MAX 5
+float queue[MAX];
+int front = -1;
+int rear = -1;
+int size = MAX;
+void enqueue(float value) {
+    if (rear == size - 1) {
+        printf("Queue is full. Cannot enqueue %.2f\n", value);
+    } else {
+        if (front == -1) {
+            front = 0;
+        }
+        rear++;
+        queue[rear] = value;
+        printf("%.2f enqueued to queue.\n", value);
+    }
+}
+
+int main() {
+    enqueue(1.1);
+    enqueue(2.2);
+    enqueue(3.3);
+    enqueue(4.4);
+    enqueue(5.5);
+    enqueue(6.6);
+
+    return 0;
+}
 
 ```
 
 ## Output:
 
-![image](https://github.com/user-attachments/assets/b01a6d05-f780-4e4d-88ef-bd3197e5f197)
+![image](https://github.com/user-attachments/assets/d9acefbd-e1bf-4246-ac61-644fb3f34e7e)
 
 
 ## Result:
