@@ -526,4 +526,770 @@ int main() {
 ## Result: 
 Thus, the program is verified successfully
 
+## Module 9 Lab Assignment
+
+## EXP NO:11
+C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
+
+## Aim: 
+To write a C program to display stack elements using an array. 
+
+## Algorithm:
+
+Include Necessary Header Files
+Declare Global Variables
+Define the Display Function
+Main Function (or Other Relevant Code)
+Initialize the stack and top as needed.
+Perform stack operations (push, pop, etc.).
+Use the display function to visualize the stack's contents
+## Program:
+```
+#include <stdio.h> 
+#define SIZE 5       
+int stack[SIZE];
+int top = -1;
+void display() {
+    if (top == -1) {
+        printf("Stack is empty.\n");
+    } else {
+        printf("Stack elements are:\n");
+        for (int i = top; i >= 0; i--) {
+            printf("%d\n", stack[i]);
+        }
+    }
+}
+int main() {
+    int choice, value;
+
+    while(1) {
+        printf("\n*** Stack Operations Menu ***\n");
+        printf("1. Push\n");
+        printf("2. Pop\n");
+        printf("3. Display\n");
+        printf("4. Exit\n");
+        printf("Enter your choice (1-4): ");
+        scanf("%d", &choice);
+
+        switch(choice) {
+            case 1: 
+                if(top == SIZE - 1) {
+                    printf("Stack Overflow! Cannot push more elements.\n");
+                } else {
+                    printf("Enter value to push: ");
+                    scanf("%d", &value);
+                    top++;
+                    stack[top] = value;
+                    printf("%d pushed into the stack.\n", value);
+                }
+                break;
+
+            case 2: 
+                if(top == -1) {
+                    printf("Stack Underflow! Stack is empty.\n");
+                } else {
+                    printf("Popped element is: %d\n", stack[top]);
+                    top--;
+                }
+                break;
+
+            case 3: 
+                display();
+                break;
+
+            case 4:
+                printf("Exiting the program.\n");
+                return 0;
+
+            default:
+                printf("Invalid choice! Please enter between 1 and 4.\n");
+        }
+    }
+
+    return 0;
+}
+
+```
+
+## Output:
+
+![image](https://github.com/user-attachments/assets/0502f42e-8559-4553-80e4-a53e1869da98)
+
+
+## Result:
+Thus, the program to display stack elements using an array is verified successfully.
+
+## EXP NO:12
+PROGRAM TO PUSH THE GIVEN ELEMENT IN TO A STACK USING ARRAY. Aim: To create a C program to push the given element in to a stack using array.
+
+## Algorithm:
+
+Declare global variables for the stack size, top index, and the stack itself.
+Define the push function to add a floating-point number to the stack.
+Initialize the stack size, top index, and the stack itself.
+Call the push function as needed.
+## Program:
+
+```
+#include <stdio.h>
+#define MAX 5 
+float stack[MAX];
+int top = -1;
+void push(float num) {
+    if(top == MAX - 1) {
+        printf("Stack Overflow! Cannot push %.2f\n", num);
+    } else {
+        top++;
+        stack[top] = num;
+        printf("%.2f pushed to stack at position %d\n", num, top);
+    }
+}
+
+int main() {
+    push(10.5);
+    push(20.75);
+    push(30.25);
+    push(40.0);
+    push(50.5);
+    push(60.0);
+
+    return 0;
+}
+
+```
+
+## Output:
+![image](https://github.com/user-attachments/assets/9a9f9628-29f8-450e-8ab2-adbf6527f3bc)
+
+## Result:
+Thus, the program to push the given element in to a stack using array is verified successfully
+
+## EXP NO:13
+C PROGRAM TO DISPLAY QUEUE ELEMENTS USING ARRAY. Aim: To write a C program to display queue elements using array
+
+## Algorithm:
+
+Declare global variables for the queue, rear, front, and iteration.
+Define the display function to print the elements of the queue.
+Initialize the queue, rear, and front as needed.
+Call the display function and perform other queue operations as needed.
+Program:
+```
+#include <stdio.h>
+
+#define MAX 5  
+int queue[MAX];
+int front = -1, rear = -1;
+int i; 
+void display() {
+    if (front == -1) {
+        printf("\nQueue is empty.\n");
+    } else {
+        printf("\nQueue elements are: ");
+        for (i = front; i <= rear; i++) {
+            printf("%d ", queue[i]);
+        }
+        printf("\n");
+    }
+}
+void enqueue(int value) {
+    if (rear == MAX - 1) {
+        printf("\nQueue is full. Cannot insert %d.\n", value);
+    } else {
+        if (front == -1) front = 0; 
+        rear++;
+        queue[rear] = value;
+        printf("\nInserted %d into the queue.\n", value);
+    }
+}
+void dequeue() {
+    if (front == -1 || front > rear) {
+        printf("\nQueue is empty. Cannot delete.\n");
+    } else {
+        printf("\nDeleted %d from the queue.\n", queue[front]);
+        front++;
+    }
+}
+
+int main() {
+    display();
+
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    enqueue(40);
+    enqueue(50);
+
+    display();
+
+    dequeue();
+    dequeue();
+
+    display();
+
+    enqueue(60);
+
+    display();
+
+    return 0;
+}
+
+```
+
+## Output:
+
+![image](https://github.com/user-attachments/assets/b79073a8-2beb-470d-9fab-b25570fe9956)
+
+
+## Result:
+Thus, the program to display queue elements using array is verified successfully.
+
+## EXP NO 14 C:
+PROGRAM TO INSERT ELEMENTS IN QUEUE USING ARRAY. Aim: To write a C program to insert elements in queue using array.
+
+## Algorithm:
+
+Declare global variables for the size, rear, front, and the queue itself.
+Define the enqueue function to add a float to the queue.
+Initialize the rear, front, and size of the queue as needed.
+Call the enqueue function as needed.
+## Program:
+```
+#include <stdio.h>
+#define MAX 5
+float queue[MAX];
+int front = -1;
+int rear = -1;
+int size = MAX;
+void enqueue(float value) {
+    if (rear == size - 1) {
+        printf("Queue is full. Cannot enqueue %.2f\n", value);
+    } else {
+        if (front == -1) {
+            front = 0;
+        }
+        rear++;
+        queue[rear] = value;
+        printf("%.2f enqueued to queue.\n", value);
+    }
+}
+
+int main() {
+    enqueue(1.1);
+    enqueue(2.2);
+    enqueue(3.3);
+    enqueue(4.4);
+    enqueue(5.5);
+    enqueue(6.6);
+
+    return 0;
+}
+
+```
+
+## Output:
+
+![image](https://github.com/user-attachments/assets/d9acefbd-e1bf-4246-ac61-644fb3f34e7e)
+
+
+## Result:
+Thus, the program to insert elements in queue using array is verified successfully.
+
+## EXP NO:15
+C FUNCTION TO DELETE ELEMENTS IN QUEUE USING ARRAY
+
+## Aim:
+
+To create a function in C that deletes an element from a queue implemented using an array.
+
+## Algorithm:
+
+Check if the Queue is Empty o If the front pointer is -1, it means the queue is empty, and there are no elements to delete. Print a message indicating that the queue is empty.
+Delete the Front Element o If the queue is not empty, the element at the front index is deleted. o Increment the front pointer by 1 to remove the element and point to the next element in the queue.
+Check if the Queue Becomes Empty After Deletion: o After deletion, check if the front pointer has passed the rear pointer (front > rear). If this is true, reset both front and rear to -1, indicating that the queue is now empty.
+End the Function.
+## Program:
+
+```
+#include <stdio.h>
+
+#define SIZE 5 
+int queue[SIZE];
+int front = -1, rear = -1;
+
+void delete() {
+    if (front == -1) {
+        printf("Queue is empty. Cannot delete.\n");
+    } else {
+        printf("Deleted element: %d\n", queue[front]);
+        front++;
+
+        if (front > rear) {
+            front = rear = -1;
+            printf("Queue is now empty after deletion.\n");
+        }
+    }
+}
+void insert(int value) {
+    if (rear == SIZE - 1) {
+        printf("Queue is full. Cannot insert %d.\n", value);
+    } else {
+        if (front == -1) front = 0; 
+        rear++;
+        queue[rear] = value;
+        printf("Inserted %d into queue.\n", value);
+    }
+}
+void display() {
+    if (front == -1) {
+        printf("Queue is empty.\n");
+    } else {
+        printf("Queue elements: ");
+        for (int i = front; i <= rear; i++) {
+            printf("%d ", queue[i]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    insert(10);
+    insert(20);
+    insert(30);
+    display();
+
+    delete();
+    display();
+
+    delete();
+    display();
+
+    delete();
+    display();
+
+    delete(); 
+    return 0;
+}
+
+```
+
+## Output:
+
+![image](https://github.com/user-attachments/assets/e6d3c162-8c67-4c2f-b84e-242c21aab0d5)
+
+
+## Result: 
+Thus, the function that deletes an element from a queue implemented using an array is verified successfully.
+
+## Module 10 Lab Assignment
+
+## EXP NO:16
+C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST. Aim: To write a C program to search a given element in the given linked list.
+
+## Algorithm:
+
+Define the structure for a node in a linked list.
+Define the search function to find a specific character in the linked list.
+Initialize the head of the linked list as needed.
+Call the search function and perform other linked list operations as needed.
+## Program:
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    char data;
+    struct Node* next;
+};
+struct Node* createNode(char data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    if (newNode == NULL) {
+        printf("Memory not allocated.\n");
+        exit(0);
+    }
+    newNode->data = data;
+    newNode->next = NULL;
+    return newNode;
+}
+struct Node* insertEnd(struct Node* head, char data) {
+    struct Node* newNode = createNode(data);
+    if (head == NULL) {
+        head = newNode;
+    } else {
+        struct Node* temp = head;
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+    }
+    return head;
+}
+void search(struct Node* head, char key) {
+    struct Node* temp = head;
+    int position = 1;
+    int found = 0;
+
+    while (temp != NULL) {
+        if (temp->data == key) {
+            printf("Character '%c' found at position %d.\n", key, position);
+            found = 1;
+            break;
+        }
+        temp = temp->next;
+        position++;
+    }
+
+    if (!found) {
+        printf("Character '%c' not found in the linked list.\n", key);
+    }
+}
+void display(struct Node* head) {
+    struct Node* temp = head;
+    printf("Linked List: ");
+    while (temp != NULL) {
+        printf("%c -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    struct Node* head = NULL;
+    char searchChar;
+    head = insertEnd(head, 'A');
+    head = insertEnd(head, 'B');
+    head = insertEnd(head, 'C');
+    head = insertEnd(head, 'D');
+    head = insertEnd(head, 'E');
+    display(head);
+    printf("\nEnter character to search: ");
+    scanf(" %c", &searchChar);
+    search(head, searchChar);
+
+    return 0;
+}
+
+```
+## Output:
+
+![image](https://github.com/user-attachments/assets/c24f7edf-0577-4bdd-9b50-b3559cbd721f)
+
+
+## Result: 
+Thus, the program to search a given element in the given linked list is verified successfully.
+
+## EXP NO:17 
+PROGRAM TO INSERT A NODE IN A LINKED LIST. Aim: To write a C program to insert a node in a linked list. 
+## Algorithm:
+
+Define the structure for a node in a linked list
+Define the insert function to insert a new node with character data at the end of the linked list.
+Initialize the head of the linked list as needed.
+Call the insert function and perform other linked list operations as needed.
+## Program:
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    char data;
+    struct Node* next;
+};
+struct Node* head = NULL;
+void insert(char value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = NULL;
+    if (head == NULL) {
+        head = newNode;
+    }
+    else {
+        struct Node* temp = head;
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next = newNode;
+    }
+}
+void display() {
+    struct Node* temp = head;
+    printf("\nLinked List: ");
+    while (temp != NULL) {
+        printf("%c -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("NULL\n");
+}
+int main() {
+    insert('A');
+    insert('B');
+    insert('C');
+    insert('D');
+
+    display();
+
+    return 0;
+}
+
+```
+## Output:
+
+![image](https://github.com/user-attachments/assets/49f6e3fc-8d0a-48da-8d5f-1236afc119ac)
+
+
+## Result:
+Thus, the program to insert a node in a linked list is verified successfully.
+
+## EXP NO:18 
+C PROGRAM TO TRAVERSE A DOUBLY LINKED LIST Aim: To write a C program to traverse a doubly linked list.
+
+## Algorithm:
+
+Initialize a temporary pointer (temp) to the head of the list.
+Use a while loop to traverse the list until the end (temp == NULL) is reached.
+Inside the loop, print the data of the current node.
+Move to the next node by updating the temp pointer to point to the next node (temp = temp->next).
+## Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+// Define a structure for a node
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+int main() {
+    // Create three nodes
+    struct Node* head = NULL;
+    struct Node* second = NULL;
+    struct Node* third = NULL;
+
+    // Allocate memory for nodes
+    head = (struct Node*)malloc(sizeof(struct Node));
+    second = (struct Node*)malloc(sizeof(struct Node));
+    third = (struct Node*)malloc(sizeof(struct Node));
+
+    // Assign data and link nodes
+    head->data = 10;
+    head->next = second;
+
+    second->data = 20;
+    second->next = third;
+
+    third->data = 30;
+    third->next = NULL; // Last node points to NULL
+
+    // Initialize a temporary pointer to head
+    struct Node* temp = head;
+
+    // Traverse and print the linked list
+    printf("Linked List Elements:\n");
+    while (temp != NULL) {
+        printf("%d -> ", temp->data);
+        temp = temp->next; // Move to the next node
+    }
+    printf("NULL\n"); // End of the list
+
+    // Free the allocated memory
+    free(head);
+    free(second);
+    free(third);
+
+    return 0;
+}
+
+```
+## Output:
+![image](https://github.com/user-attachments/assets/9b902f34-86de-4c54-a8f5-0f8236ac2a6e)
+
+
+## Result:
+Thus, the program to traverse a doubly linked list is verified successfully.
+
+## EXP NO:19 
+C PROGRAM TO INSERT AN ELEMENT IN DOUBLY LINKED LIST Aim: To write a C program to insert an element in doubly linked list
+
+## Algorithm:
+
+Create a new node (newNode) and allocate memory for it.
+Set the data of the new node to the provided value.
+If the list is empty, set the new node as the head.
+If the list is not empty, traverse the list to find the last node.
+Set the new node's prev pointer to the last node and update the last node's next pointer to the new node.
+## Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;
+    struct Node* prev;
+    struct Node* next;
+};
+void insertEnd(struct Node** head, int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->prev = NULL;
+    newNode->next = NULL;
+    if (*head == NULL) {
+        *head = newNode;
+    } else {
+        struct Node* temp = *head;
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+
+        temp->next = newNode;
+        newNode->prev = temp;
+    }
+}
+void display(struct Node* head) {
+    struct Node* temp = head;
+    printf("Doubly Linked List: ");
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+int main() {
+    struct Node* head = NULL; 
+    insertEnd(&head, 10);
+    insertEnd(&head, 20);
+    insertEnd(&head, 30);
+    insertEnd(&head, 40);
+
+    display(head);
+
+    return 0;
+}
+
+```
+## Output:
+![image](https://github.com/user-attachments/assets/9910e708-a1e3-4d45-96e0-679589efd3a8)
+
+## Result:
+Thus, the program to insert an element in doubly linked list is verified successfully.
+
+## EXP NO 20:
+C FUNCTION TO DELETE A GIVEN ELEMENT IN THE GIVEN LINKED LIST
+
+## Aim: 
+To write a C function that deletes a given element from a linked list.
+
+## Algorithm:
+
+Check if the Linked List is Empty: o If the head of the linked list is NULL, print a message indicating the list is empty and exit the function.
+Traverse the Linked List: o Start from the head node and iterate through the list to find the node that contains the given element (data).
+Handle Deletion of the First Node: o If the element to be deleted is found in the head node:  Update the head of the linked list to point to the next node (i.e., head = head->next).  Free the memory allocated to the node to be deleted.  Exit the function.
+Traverse and Delete from the Middle or End: o If the element is not in the head node, continue traversing the list by checking each node’s next pointer. o When the node with the element is found, update the previous node’s next pointer to point to the next node of the node to be deleted (prev->next = current->next). o Free the memory allocated to the node to be deleted.
+Handle the Case when the Element is Not Found: o If the element is not found in any node, print a message indicating the element is not present in the list.
+End the Function.
+## Program:
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;
+    struct Node* next;
+};
+void deleteNode(struct Node** head, int key) {
+    struct Node* temp = *head;
+    struct Node* prev = NULL;
+    if (temp == NULL) {
+        printf("The linked list is empty.\n");
+        return;
+    }
+    if (temp != NULL && temp->data == key) {
+        *head = temp->next; 
+        free(temp);
+        printf("Element %d deleted from the list.\n", key);
+        return;
+    }
+    while (temp != NULL && temp->data != key) {
+        prev = temp;
+        temp = temp->next;
+    }
+    if (temp == NULL) {
+        printf("Element %d not found in the list.\n", key);
+        return;
+    }
+    prev->next = temp->next;
+    free(temp);
+    printf("Element %d deleted from the list.\n", key);
+}
+
+void insertEnd(struct Node** head, int newData) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* last = *head;
+
+    newNode->data = newData;
+    newNode->next = NULL;
+
+    if (*head == NULL) {
+        *head = newNode;
+        return;
+    }
+
+    while (last->next != NULL)
+        last = last->next;
+
+    last->next = newNode;
+}
+void displayList(struct Node* node) {
+    if (node == NULL) {
+        printf("The linked list is empty.\n");
+        return;
+    }
+
+    printf("Linked List: ");
+    while (node != NULL) {
+        printf("%d -> ", node->data);
+        node = node->next;
+    }
+    printf("NULL\n");
+}
+int main() {
+    struct Node* head = NULL;
+    int choice, value;
+
+    while (1) {
+        printf("\n--- Menu ---\n");
+        printf("1. Insert\n2. Delete\n3. Display\n4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter value to insert: ");
+                scanf("%d", &value);
+                insertEnd(&head, value);
+                break;
+            case 2:
+                printf("Enter value to delete: ");
+                scanf("%d", &value);
+                deleteNode(&head, value);
+                break;
+            case 3:
+                displayList(head);
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("Invalid choice! Try again.\n");
+        }
+    }
+    return 0;
+}
+
+```
+## Output:
+![image](https://github.com/user-attachments/assets/caf7880e-4f03-494f-af4b-b35703ee06cc)
+
+## Result: 
+Thus, the function that deletes a given element from a linked list is verified successfully.
+
+
 
